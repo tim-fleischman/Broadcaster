@@ -1,8 +1,7 @@
 ﻿import { Action, Reducer } from 'redux';
-import { AppThunkAction } from './';
-
+ 
 export interface BoxState {
-    active: boolean;
+    isactive: boolean;
 }
 
 export interface BoxAttributes {
@@ -23,15 +22,15 @@ export const actionCreators = {
 
 export const reducer: Reducer<BoxState> = (state: BoxState | undefined, incomingAction: Action): BoxState => {
     if (state === undefined) {
-        return { active: false };
+        return { isactive: false };
     }
 
     const action = incomingAction as KnownAction;
     switch (action.type) {
         case 'BOX_ON':
-            return { active: true };
+            return { isactive: true };
         case 'BOX_OFF':
-            return { active: false };
+            return { isactive: false };
         default:
             return state;
     }

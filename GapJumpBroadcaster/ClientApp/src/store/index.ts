@@ -1,6 +1,6 @@
 import * as WeatherForecasts from './WeatherForecasts';
 import * as Counter from './Counter';
-import * as FlashComponent from './FlashComponent'
+import * as FlashComponent from './Flash'
 
 // The top-level state object
 export interface ApplicationState {

@@ -2,7 +2,7 @@
 import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router';
 import { ApplicationState } from '../store';
-import * as FlashStore from '../store/FlashComponent';
+import * as FlashStore from '../store/Flash';
 
 type FlashProps =
     FlashStore.BoxState &
@@ -17,7 +17,7 @@ class Flasher extends React.PureComponent<FlashProps> {
 
                 <p>Rob's React component.</p>
 
-                <p aria-live="polite">Current state: <strong>{this.props.active}</strong></p>
+                <p aria-live="polite">Current state: <strong>{this.props.isactive}</strong></p>
 
                 <button type="button"
                     className="btn btn-primary btn-lg"
@@ -29,12 +29,31 @@ class Flasher extends React.PureComponent<FlashProps> {
                     onClick={() => { this.props.boxon(); }}>
                     Box On
                 </button>
+
+                {this.renderJunkTable()}
+
             </React.Fragment>
+        );
+    }
+    private renderJunkTable() {
+        return (
+            <table className='table table-striped' aria-labelledby="tabelLabel">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Some Info</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
         );
     }
 };
 
+
+
 export default connect(
-    (state: ApplicationState) => state.active,
+    (state: ApplicationState) => state.flashComponent,
     FlashStore.actionCreators
-)(Flasher);
+)(Flasher); 

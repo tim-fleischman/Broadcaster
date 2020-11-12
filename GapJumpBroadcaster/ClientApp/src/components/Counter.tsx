@@ -9,7 +9,7 @@ type CounterProps =
     typeof CounterStore.actionCreators &
     RouteComponentProps<{}>;
 
-class Counter extends React.PureComponent<CounterProps> {
+class Counter extends React.PureComponent <CounterProps> {
     public render() {
         return (
             <React.Fragment>

@@ -20,7 +20,7 @@ export const actionCreators = {
     boxoff: () => ({ type: 'BOX_OFF' } as BoxOffAction)
 };
 
-export const reducer: Reducer<BoxState> = (state: BoxState | undefined, incomingAction: Action): BoxState => {
+export const reducer: Reducer <BoxState> = (state: BoxState | undefined, incomingAction: Action): BoxState => {
     if (state === undefined) {
         return { isactive: false };
     }

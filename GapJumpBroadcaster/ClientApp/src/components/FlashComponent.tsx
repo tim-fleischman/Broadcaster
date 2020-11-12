@@ -51,9 +51,7 @@ class Flasher extends React.PureComponent<FlashProps> {
     }
 };
 
-
-
 export default connect(
-    (state: ApplicationState) => state.flashComponent,
+    (state: ApplicationState) => state.flasher,
     FlashStore.actionCreators
 )(Flasher); 

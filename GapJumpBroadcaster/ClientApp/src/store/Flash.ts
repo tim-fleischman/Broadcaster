@@ -2,6 +2,7 @@
  
 export interface BoxState {
     isActive: string;
+    headerStyleName: string;
 }
 
 export interface BoxAttributes {
@@ -30,15 +31,15 @@ export const actionCreators = {
 
 export const reducer: Reducer <BoxState> = (state: BoxState | undefined, incomingAction: Action): BoxState => {
     if (state === undefined) {
-        return { isActive: "Off" };
+        return { isActive: "Off", headerStyleName: "table-header-off" };
     }
 
     const action = incomingAction as KnownAction;
     switch (action.type) {
         case 'BOX_ON':
-            return { isActive: "On" };
+            return { isActive: "On", headerStyleName: "table-header-on" };
         case 'BOX_OFF':
-            return { isActive: "Off" };
+            return { isActive: "Off", headerStyleName: "table-header-off" };
         default:
             return state;
     }

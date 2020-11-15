@@ -18,12 +18,12 @@ class Flasher extends React.PureComponent<FlashProps> {
                 <p aria-live="polite">Current state: <strong>{this.props.isActive}</strong></p>
 
                 <button type="button"
-                    className="btn btn-primary btn-lg"
+                    className="btn btn-primary btn-sm"
                     onClick={() => { this.props.boxoff(); }}>
                     Switch Off
                 </button>
                 <button type="button"
-                    className="btn btn-primary btn-lg"
+                    className="btn btn-primary btn-sm"
                     onClick={() => { this.props.boxon(); }}>
                     Switch On
                 </button>
@@ -39,10 +39,10 @@ class Flasher extends React.PureComponent<FlashProps> {
         return (
             <table>
                 <tr>
-                    <th scope="col" className="table-header-on">Reactor</th>
-                    <th scope="col" className="table-header-on">Output (MW)</th>
-                    <th scope="col" className="table-header-on">Temperature (C)</th>
-                    <th scope="col" className="table-header-on">Summary</th>
+                    <th scope="col" className={this.props.headerStyleName}>Reactor</th>
+                    <th scope="col" className={this.props.headerStyleName}>Output (MW)</th>
+                    <th scope="col" className={this.props.headerStyleName}>Temperature (C)</th>
+                    <th scope="col" className={this.props.headerStyleName}>Summary</th>
                 </tr>
                 <tr>
                     <th scope="row" className="row-header">Reactor 1</th>

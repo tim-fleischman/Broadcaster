@@ -1,13 +1,21 @@
 ﻿import { Action, Reducer } from 'redux';
  
 export interface BoxState {
-    isactive: boolean;
+    isActive: string;
 }
 
 export interface BoxAttributes {
     height: number;
     width: number;
     colour: string;
+}
+
+export interface CoreParams {
+    date: string;
+    temperatureC: number;
+    powerOutputMW: number;
+    summary: string;
+    location: string;
 }
 
 export interface BoxOnAction { type: 'BOX_ON' }
@@ -22,15 +30,15 @@ export const actionCreators = {
 
 export const reducer: Reducer <BoxState> = (state: BoxState | undefined, incomingAction: Action): BoxState => {
     if (state === undefined) {
-        return { isactive: false };
+        return { isActive: "Off" };
     }
 
     const action = incomingAction as KnownAction;
     switch (action.type) {
         case 'BOX_ON':
-            return { isactive: true };
+            return { isActive: "On" };
         case 'BOX_OFF':
-            return { isactive: false };
+            return { isActive: "Off" };
         default:
             return state;
     }

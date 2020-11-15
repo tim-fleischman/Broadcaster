@@ -40,10 +40,11 @@ class FetchData extends React.PureComponent<WeatherForecastProps> {
   }
 
   private renderForecastsTable() {
-    return (
-      <table className='table table-striped' aria-labelledby="tabelLabel">
+      return (
+          <table className='table table-striped' aria-color="red" aria-labelledby="tabelLabel">
         <thead>
           <tr>
+            <th>Location</th>
             <th>Date</th>
             <th>Temp. (C)</th>
             <th>Temp. (F)</th>
@@ -53,6 +54,7 @@ class FetchData extends React.PureComponent<WeatherForecastProps> {
         <tbody>
           {this.props.forecasts.map((forecast: WeatherForecastsStore.WeatherForecast) =>
             <tr key={forecast.date}>
+              <td>{forecast.location}</td>
               <td>{forecast.date}</td>
               <td>{forecast.temperatureC}</td>
               <td>{forecast.temperatureF}</td>

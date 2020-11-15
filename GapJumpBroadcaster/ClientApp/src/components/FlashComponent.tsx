@@ -13,39 +13,55 @@ class Flasher extends React.PureComponent<FlashProps> {
     public render() {
         return (
             <React.Fragment>
-                <h1>Box state</h1>
+                <h1>Rob's React Fragment</h1>
 
-                <p>Rob's React component.</p>
-
-                <p aria-live="polite">Current state: <strong>{this.props.isactive}</strong></p>
+                <p aria-live="polite">Current state: <strong>{this.props.isActive}</strong></p>
 
                 <button type="button"
                     className="btn btn-primary btn-lg"
                     onClick={() => { this.props.boxoff(); }}>
-                    Box Off
+                    Switch Off
                 </button>
                 <button type="button"
                     className="btn btn-primary btn-lg"
                     onClick={() => { this.props.boxon(); }}>
-                    Box On
+                    Switch On
                 </button>
 
-                {this.renderJunkTable()}
+                <h1>Reactor Performance Data</h1>
+
+                {this.renderPerfDataTable()}
 
             </React.Fragment>
         );
     }
-    private renderJunkTable() {
+    private renderPerfDataTable() {
         return (
-            <table className='table table-striped' aria-labelledby="tabelLabel">
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Some Info</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
+            <table>
+                <tr>
+                    <th scope="col" className="table-header-on">Reactor</th>
+                    <th scope="col" className="table-header-on">Output (MW)</th>
+                    <th scope="col" className="table-header-on">Temperature (C)</th>
+                    <th scope="col" className="table-header-on">Summary</th>
+                </tr>
+                <tr>
+                    <th scope="row" className="row-header">Reactor 1</th>
+                    <td>687</td>
+                    <td>305</td>
+                    <td>Nominal</td>
+                </tr>
+                <tr>
+                    <th scope="row" className="row-header">Reactor 2</th>
+                    <td>595</td>
+                    <td>302</td>
+                    <td>Nominal</td>
+                </tr>
+                <tr>
+                    <th scope="row" className="row-header">Reactor 3</th>
+                    <td>634</td>
+                    <td>297</td>
+                    <td>Nominal</td>
+                </tr>
             </table>
         );
     }

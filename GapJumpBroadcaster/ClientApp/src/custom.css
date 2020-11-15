@@ -7,8 +7,17 @@ code {
   color: #E01A76;
 }
 
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+.table-header-on {
+    color: white;
+    background-color: darkred;
+}
+
+.table-header-on {
+    color: white;
+    background-color: black;
+}
+
+.row-header {
+    color: white;
+    background-color: grey;
 }
